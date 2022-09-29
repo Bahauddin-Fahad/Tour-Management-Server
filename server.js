@@ -1,4 +1,3 @@
-// const { ServerApiVersion } = require("mongodb");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
 const colors = require("colors");
@@ -10,7 +9,7 @@ mongoose
   .connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    // serverApi: ServerApiVersion.v1,
+    useFindAndModify: false,
   })
   .then(() => {
     console.log("Database is connected".green.bold);
